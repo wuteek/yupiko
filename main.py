@@ -44,3 +44,13 @@ class Board:
       self.bingo["diagonal"][1] += 1
    def checkBingo(self):
     return 5 in self.bingo["row] or 5 in self.bingo["col"] 5 in self.bingo["diagonal"]
+class Player(Board):
+    def __init__(self, name):
+        self.name = name
+        self.board = Board()
+    
+    def updatePlayerBoard(self, val):
+        self.board.updateBoard(val)
+    
+    def checkBingo(self):
+        return self.board.checkBingo()
